@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "Student.h"
+#include <fstream>
 
 class Course{
   std::string m_name = "course";
@@ -16,6 +17,7 @@ public:
   void addStudent(const Student&);
   const std::vector<Student>& getStudents() const;
   void print() const;
+  void loadFromFile(const std::string&);
 };
 
 #endif

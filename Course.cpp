@@ -14,3 +14,16 @@ void Course::print() const {
     var.details();
   }
 }
+
+
+void Course::loadFromFile(const std::string& filename){
+  std::ifstream fin(filename);
+  std::string first, last;
+  int id;
+  float avg;
+
+  while (fin>>first) {
+    fin >> last >> id >> avg;
+    addStudent(Student(first,last,id,avg));
+  }
+}
